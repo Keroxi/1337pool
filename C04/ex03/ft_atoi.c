@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_fix.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aasita <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/27 21:29:48 by aasita            #+#    #+#             */
-/*   Updated: 2025/07/27 22:46:28 by aasita           ###   ########.fr       */
+/*   Created: 2025/07/28 15:35:36 by aasita            #+#    #+#             */
+/*   Updated: 2025/07/28 16:27:43 by aasita           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int	ft_atoi(char *str)
 	int	sum;
 
 	i = 0;
+	sign = 1;
 	sum = 0;
-	while ((str[i] = ' ') || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] && (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13)))
 		i++;
 	while (str[i] && (str[i] == '-' || str[i] == '+'))
 	{
@@ -26,17 +27,12 @@ int	ft_atoi(char *str)
 			sign *= -1;
 		i++;
 	}
-	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	while (str[i])
 	{
-		sum = (sum * 10) + (str[i] + '0');
+		if (str[i] >= '0' && str[i] <= '9')
+			sum = (sum * 10) + (str[i] - '0');
+		else return (sign * sum);
 		i++;
 	}
-	return(sign * sum);
-}
-#include <stdio.h>
-int main()
-{
-    int sum = ft_atoi("---+--+1234ab567");
-    printf("sum : %d", sum);
-    return 0;
+	return (sign * sum);
 }
