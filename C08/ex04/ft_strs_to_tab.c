@@ -1,28 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aasita <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 20:28:46 by aasita            #+#    #+#             */
-/*   Updated: 2025/08/05 17:16:19 by aasita           ###   ########.fr       */
+/*   Created: 2025/08/05 21:34:03 by aasita            #+#    #+#             */
+/*   Updated: 2025/08/05 21:37:08 by aasita           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOLEAN_H
+#include <stdlib.h>
 
-# define FT_BOOLEAN_H
 
-# include <unistd.h>
-
-typedef int	t_bool;
-
-# define TRUE 1
-# define FALSE 0
-# define SUCCESS 0
-# define EVEN(n) ((n) % 2 == 0)
-# define EVEN_MSG "I have an even number of arguments.\n"
-# define ODD_MSG "I have an odd number of arguments.\n"
-
-#endif
